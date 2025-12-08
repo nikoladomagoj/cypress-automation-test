@@ -5,6 +5,7 @@ module.exports = defineConfig({
     baseUrl: "https://automationexercise.com",
     viewportWidth: 1280,
     viewportHeight: 720,
+    specPattern: "test/specs/**/*.js",
     setupNodeEvents(on, config) {
       // node events can be added here later if needed
     },
