@@ -95,7 +95,7 @@ test/pageobjects/shopping.page.js
 The test imports the page object like this:
 
 ```js
-const shoppingPage = require("../pageobjects/shopping.page");
+import shoppingPage from '../pageobjects/shopping.page';
 ```
 
 This keeps the test:
