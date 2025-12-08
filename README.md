@@ -1,13 +1,56 @@
-Cypress Automation Test – AutomationExercise.com
+# Cypress Automation Test – AutomationExercise.com
 
-This project contains an end-to-end UI test suite built with Cypress + JavaScript, using the Page Object Model (POM) structure.
-The test automates the creation of a new user account on:
+This project contains an **end-to-end UI automation test** written in **Cypress + JavaScript**, using the **Page Object Model (POM)** design pattern.
 
-👉 https://automationexercise.com/
+The test automates the **new user registration (Sign Up) flow** on:
+👉 [https://automationexercise.com/](https://automationexercise.com/)
 
-A random email and random mobile number are generated on each test execution so the signup process never fails due to an existing user.
+---
 
-📁 Project Structure
+## ✅ Test Scenario – Register New User
+
+The automated test performs the following steps:
+
+1. Open the home page
+2. Navigate to **Signup / Login**
+3. Enter **name and random email**
+4. Submit the signup form
+5. Fill in account details:
+
+   * Password
+   * First name
+   * Last name
+   * Address
+   * Country (from dropdown)
+   * State
+   * City
+   * Zip code
+   * Random mobile number
+7. Create account
+8. **Assert that "Account Created" is successfully displayed**
+9. Continue after successful registration
+10. Delete all cookies after the test
+
+---
+
+## 🎲 Random Test Data
+
+To avoid duplicate user errors, the following random data is generated for every test run:
+
+* ✅ **Random email**
+* ✅ **Random mobile number**
+
+Random data is generated inside:
+
+```
+/utility/random.js
+```
+
+---
+
+## 📁 Project Structure
+
+```
 project/
  ├── test/
  │    ├── specs/
@@ -20,78 +63,66 @@ project/
  ├── package.json
  └── README.md
 
-🛠 Installation
+```
 
-Install project dependencies:
+---
 
+## 🛠 Installation
+
+Install all dependencies:
+
+```bash
 npm install
+```
 
-▶ Running Tests
-
-Run tests in headless mode:
-
+```Run tests in headless mode:
 npx cypress run
-
-
-Run tests in headed (interactive) mode:
-
+```
+```Run tests in headed (interactive) mode:
 npx cypress open
+```
 
-🧪 Test Scenario
+---
 
-The main test performs the following steps:
+## 🧩 Page Object Model (POM)
 
-Open the homepage
+All selectors and page actions are stored inside:
 
-Navigate to Login / Signup
-
-Enter signup username & random email
-
-Fill the registration form
-
-Select country (United States)
-
-Generate random phone number
-
-Create a new account
-
-Assert that account was created successfully
-
-Continue to the next page
-
-Each test run uses:
-
-random email → prevents duplicates
-
-random mobile number
-
-📌 Technologies Used
-
-Cypress
-
-JavaScript
-
-Node.js
-
-Page Object Model (POM)
-
-✔ Page Object Model
-
-All selectors and page actions are located in:
-
+```
 test/pageobjects/shopping.page.js
+```
 
+The test imports the page object like this:
 
-The test file imports this object for clean, readable test cases.
+```js
+const shoppingPage = require("../pageobjects/shopping.page");
+```
 
-💡 Notes
+This keeps the test:
 
-No cookie banner handling is required — test works without interacting with it.
+* ✅ Clean
+* ✅ Maintainable
+* ✅ Easy to scale
 
-Test automatically generates a unique email and mobile number.
+---
 
-The project is structured for scalability and easy extension.
+## ⚙️ Technologies Used
 
-📜 License
+* **Cypress**
+* **JavaScript**
+* **Node.js**
+* **Page Object Model (POM)**
 
-This project is created for learning purposes and personal automation practice
+---
+
+## 📌 Notes
+
+* No cookie banner handling is required — test works without interacting with it.
+* Test automatically generates a unique email and mobile number.
+* The project is structured for scalability and easy extension.
+
+---
+
+## 📜 License
+
+This project is for **learning and automation practice purposes**.
