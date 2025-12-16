@@ -18,8 +18,8 @@ The automated test performs the following steps:
 5. Fill in account details:
 
    * Password
-   * First name
-   * Last name
+   * Random first name
+   * Random last name
    * Address
    * Country (from dropdown)
    * State
@@ -38,6 +38,7 @@ The automated test performs the following steps:
 To avoid duplicate user errors, the following random data is generated for every test run:
 
 * ✅ **Random email**
+* ✅ **Random first and last name**
 * ✅ **Random mobile number**
 
 Random data is generated inside:
@@ -118,7 +119,7 @@ This keeps the test:
 ## 📌 Notes
 
 * No cookie banner handling is required — test works without interacting with it.
-* Test automatically generates a unique email and mobile number.
+* Test automatically generates a unique email, firstname, lastname and mobile number.
 * The project is structured for scalability and easy extension.
 
 ---

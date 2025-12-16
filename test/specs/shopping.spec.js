@@ -1,5 +1,5 @@
 import shoppingPage from '../pageobjects/shopping.page';
-import { randomEmail, randomMobile } from '../utility/random';
+import { randomEmail, randomMobile, randomFirstName, randomLastName } from '../utility/random';
 
 describe('Shopping Signup Test', () => {
 
@@ -7,13 +7,12 @@ describe('Shopping Signup Test', () => {
 
     const signupname = 'mike';
     const password = 'test';
-    const firstname = 'mike';
-    const lastname = 'jordan';
+    const firstname = randomFirstName();
+    const lastname = randomLastName();
     const address = 'humphrey3';
     const state = 'illinois';
     const city = 'chicago';
     const zipcode = '10000';
-
     const mobile_number = randomMobile();
 
     before(() => {
